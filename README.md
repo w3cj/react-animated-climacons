@@ -2,7 +2,9 @@
 
 > Animated SVG Climacons for React (Weather Icons)
 
-[![NPM](https://img.shields.io/npm/v/react-animated-climacons.svg)](https://www.npmjs.com/package/react-animated-climacons) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+[![NPM](https://img.shields.io/npm/v/react-animated-climacons.svg)](https://www.npmjs.com/package/react-animated-climacons)
+
+Original SVG icons from [https://github.com/noahblon/animated-climacons](https://github.com/noahblon/animated-climacons)
 
 ## Install
 
@@ -13,16 +15,24 @@ npm install --save react-animated-climacons
 ## Usage
 
 ```jsx
-import React, { Component } from 'react'
+import React from 'react';
 
-import MyComponent from 'react-animated-climacons'
-import 'react-animated-climacons/dist/index.css'
+import {
+  OpenWeatherMapCodes,
+  Moon,
+} from 'react-animated-climacons';
 
-class Example extends Component {
-  render() {
-    return <MyComponent />
-  }
-}
+const App = () => {
+  // Use the OpenWeatherMapCodes to map a code to a component
+  const Icon = OpenWeatherMapCodes.night[801];
+  return (
+    <div>
+      // fill and stroke props are optional
+      <Moon fill="red" stroke="black" />
+      <Icon fill="green" stroke="black" />
+    </div>
+  );
+};
 ```
 
 ## License
